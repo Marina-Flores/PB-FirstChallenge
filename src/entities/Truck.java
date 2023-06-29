@@ -1,8 +1,6 @@
 package entities;
 
-import interfaces.DoorControl;
-
-public class Truck extends Vehicle implements DoorControl{
+public class Truck extends VehicleWithDoor{
 	
 	private int axlesNumber;
 	
@@ -42,25 +40,5 @@ public class Truck extends Vehicle implements DoorControl{
 		this.axlesNumber = axlesNumber;
 	}	
 	
-	@Override 
-	public void openDoor(int doorsNumber) {
-		
-	}
 	
-	@Override
-	public void closeDoor(int doorsNumber) {
-		
-	}
-
-	@Override
-	public void lockDoors() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void unlockDoors() {
-		// TODO Auto-generated method stub
-		
-	}
 }

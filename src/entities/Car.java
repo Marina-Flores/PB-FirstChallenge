@@ -1,11 +1,9 @@
 package entities;
 
-import interfaces.DoorControl;
-
-public class Car extends Vehicle implements DoorControl{
+public class Car extends VehicleWithDoor{
 	
 	private boolean hasAirConditioning;
-
+	
 	public Car
 	(
 		boolean steeringWheel, 
@@ -41,31 +39,15 @@ public class Car extends Vehicle implements DoorControl{
 
 	public void setHasAirConditioning(boolean hasAirConditioning) {
 		this.hasAirConditioning = hasAirConditioning;
-	}
-
-	@Override
-	public void openDoor(int doorsNumber) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void closeDoor(int doorsNumber) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void lockDoors() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void unlockDoors() {
-		// TODO Auto-generated method stub
+	}	
+	
+	@Override 
+	public void addPassenger() {
 		
 	}
 	
-
+	@Override
+	public void removePassenger() {
+		
+	}
 }

@@ -15,7 +15,6 @@ public class Biclycle extends Vehicle {
 			Fuel fuel,
 			int maximumSpeed,
 			boolean isEletric,
-			int doorsNumber, 
 			int maxPassengers,
 			boolean hasLuggage			
 	) 
@@ -28,7 +27,7 @@ public class Biclycle extends Vehicle {
 				forCargo, 
 				fuel, 
 				maximumSpeed, 
-				doorsNumber,
+				0,
 				maxPassengers
 			);
 		

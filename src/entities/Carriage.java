@@ -1,8 +1,7 @@
 package entities;
 
-import interfaces.DoorControl;
 
-public class Carriage extends Vehicle implements DoorControl {
+public class Carriage extends VehicleWithDoor {
 
 	public Carriage
 	(
@@ -28,29 +27,5 @@ public class Carriage extends Vehicle implements DoorControl {
 				doorsNumber,
 				maxPassengers				
 			);
-	}
-
-	@Override
-	public void openDoor(int doorsNumber) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void closeDoor(int doorsNumber) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void lockDoors() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void unlockDoors() {
-		// TODO Auto-generated method stub
-		
-	}
+	}	
 }
