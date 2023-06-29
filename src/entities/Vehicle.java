@@ -12,6 +12,7 @@ public abstract class Vehicle {
 	private Fuel fuel;
 	private int maximumSpeed;
 	private int maxPassengers;
+	private int currentSpeed = 0; 
 	
 	public Vehicle
 	(
@@ -50,9 +51,11 @@ public abstract class Vehicle {
 	public void setSteeringWheel(boolean steeringWheel) {
 		this.steeringWheel = steeringWheel;
 	}
+	
 	public int getPassengersNumber() {
 		return passengersNumber;
 	}
+	
 	public void setPassengersNumber(int passengersNumber) {
 		this.passengersNumber = passengersNumber;
 	}
@@ -87,53 +90,78 @@ public abstract class Vehicle {
 		return maximumSpeed;
 	}
 
-	public void setMaximumSpeed(int maximumSpeed) {
-		this.maximumSpeed = maximumSpeed;
-	}
-
 	public int getDoorsNumber() {
 		return doorsNumber;
 	}
-
 	
-	@Override
-	public String toString() {
-		return "Vehicle: " + this.getClass().getSimpleName();
+	public int getCurrentSpeed() {
+		return currentSpeed;
+	}
+
+	private void setCurrentSpeed(int currentSpeed) {
+		this.currentSpeed = currentSpeed;
 	}
 	
-	//TODO: speedUp
-	public void speedUp(int speed) { }
+	public void speedUp(int speed) {
+		if(this.currentSpeed == this.maximumSpeed)
+			System.out.println("It wasn't possible to accelerate because the vehicle is already at maximum speed!");
+		else if((this.currentSpeed + speed) > this.maximumSpeed) {
+			int speedIncreased = (this.currentSpeed + speed) - this.maximumSpeed;
+			this.setCurrentSpeed(this.currentSpeed + speedIncreased);
+			System.out.println("It only possible to increase the speed by " + speedIncreased + " in order to avoid exceeding the maximum speed!");
+		}
+		else
+			this.setCurrentSpeed(this.currentSpeed + speed); 
+	}
 	
-	//TODO: speedDown
-	public void speedDown(int speed) { } 
+	public void speedDown(int speed) { 
+		if(this.currentSpeed == 0)
+			System.out.println("It's not possible to decrease the speed as the vehicle is already stopped!");
+		else if(this.currentSpeed < speed) {
+			System.out.println("Stopping the vehicle...");
+			this.setCurrentSpeed(0);
+		}
+		else
+			this.setCurrentSpeed(this.currentSpeed - speed);
+	}	
+		
+	public void addPassenger() {
+		if(!this.isMaxPassengerReached()) {
+			this.passengersNumber ++; 
+		}
+		else {
+			System.out.println("Vehicle has already reached maximum passenger capacity!");
+		}
+	}	
+
+	public void removePassenger() {
+		if(passengersNumber == 0)
+			System.out.println("The vehicle has no passengers!");
+		else
+			this.passengersNumber --;
+	}
 	
-	//TODO: getPassengersCount
-	public void getPassengersCount() { }
+	public boolean isMaxPassengerReached() { 
+		if(this.passengersNumber == this.maxPassengers)
+			return true;
+		
+		return false;
+	}
 	
-	//TODO: addPassenger
-	public void addPassenger() { }
-	
-	//TODO: removePassenger
-	public void removePassenger() { }
-	
-	//TODO: isMaxPassengerReached
-	public boolean isMaxPassengerReached() { return false; }
-	
-	//TODO: startEngine
 	public void startEngine() {
 		this.engine = true;
 	} 
 	
-	//TODO: stopEngine
 	public void stopEngine() {
 		this.engine = false;
 	}
 	
+	public void upgradeSpeed(int additionalSpeed) {
+		this.maximumSpeed += additionalSpeed; 
+	}
 	
-	
-	
-	
-	
-	
-	
+	@Override
+	public String toString() {
+		return "Vehicle: " + this.getClass().getSimpleName();
+	}	
 }
