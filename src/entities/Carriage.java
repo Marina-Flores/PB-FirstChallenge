@@ -1,10 +1,11 @@
 package entities;
 
-public class Carriage extends Vehicle {
+import interfaces.DoorControl;
+
+public class Carriage extends Vehicle implements DoorControl {
 
 	public Carriage
 	(
-		boolean engine, 
 		boolean steeringWheel, 
 		double cargoCapacity, 
 		int passengersNumber, 
@@ -12,9 +13,44 @@ public class Carriage extends Vehicle {
 		boolean forCargo, 
 		Fuel fuel,
 		int maximumSpeed,
-		int doorsNumber
+		int doorsNumber,
+		int maxPassengers
 	) 
 	{
-		super(engine, steeringWheel, cargoCapacity, passengersNumber, wheelsNumber, forCargo, fuel, maximumSpeed, doorsNumber);
+		super(
+				steeringWheel, 
+				cargoCapacity, 
+				passengersNumber, 
+				wheelsNumber, 
+				forCargo, 
+				fuel, 
+				maximumSpeed, 
+				doorsNumber,
+				maxPassengers				
+			);
+	}
+
+	@Override
+	public void openDoor(int doorsNumber) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void closeDoor(int doorsNumber) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void lockDoors() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void unlockDoors() {
+		// TODO Auto-generated method stub
+		
 	}
 }

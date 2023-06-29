@@ -7,21 +7,31 @@ public class Biclycle extends Vehicle {
 	
 	public Biclycle
 	(
-			boolean engine, 
 			boolean steeringWheel, 
 			double cargoCapacity, 
 			int passengersNumber, 
 			int wheelsNumber, 
-			boolean 
-			forCargo, 
+			boolean forCargo, 
 			Fuel fuel,
 			int maximumSpeed,
 			boolean isEletric,
-			boolean hasLuggage, 
-			int doorsNumber
+			int doorsNumber, 
+			int maxPassengers,
+			boolean hasLuggage			
 	) 
 	{
-		super(engine, steeringWheel, cargoCapacity, passengersNumber, wheelsNumber, forCargo, fuel, maximumSpeed, doorsNumber);
+		super(
+				steeringWheel, 
+				cargoCapacity, 
+				passengersNumber, 
+				wheelsNumber, 
+				forCargo, 
+				fuel, 
+				maximumSpeed, 
+				doorsNumber,
+				maxPassengers
+			);
+		
 		this.isEletric = isEletric;
 		this.hasLuggage = hasLuggage;
 	}

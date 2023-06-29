@@ -6,7 +6,6 @@ public class Motorcycle extends Vehicle {
 
 	public Motorcycle
 	(
-		boolean engine, 
 		boolean steeringWheel,
 		double cargoCapacity, 
 		int passengersNumber,
@@ -14,11 +13,22 @@ public class Motorcycle extends Vehicle {
 		boolean forCargo,
 		Fuel fuel,
 		int maximumSpeed,
-		boolean eletricStart,
-		int doorsNumber
+		int maxPassengers,
+		boolean eletricStart
 	) 
 	{
-		super(engine, steeringWheel, cargoCapacity, passengersNumber, wheelsNumber, forCargo, fuel, maximumSpeed, doorsNumber);
+		super(
+				steeringWheel, 
+				cargoCapacity, 
+				passengersNumber, 
+				wheelsNumber, 
+				forCargo, 
+				fuel, 
+				maximumSpeed, 
+				0, 
+				maxPassengers
+			)
+		;
 		this.eletricStart = eletricStart;
 	}
 

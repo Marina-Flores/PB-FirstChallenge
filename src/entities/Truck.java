@@ -1,13 +1,13 @@
 package entities;
 
+import interfaces.DoorControl;
 
-public class Truck extends Vehicle{
+public class Truck extends Vehicle implements DoorControl{
 	
 	private int axlesNumber;
 	
 	public Truck
 	(
-		boolean engine, 
 		boolean steeringWheel, 
 		double cargoCapacity, 
 		int passengersNumber, 
@@ -16,12 +16,23 @@ public class Truck extends Vehicle{
 		Fuel fuel, 
 		int maximumSpeed,
 		int axlesNumber,
-		int doorsNumber
+		int doorsNumber,
+		int maxPassengers
 	) 
 	{
-		super(engine, steeringWheel, cargoCapacity, passengersNumber, wheelsNumber, forCargo, fuel, maximumSpeed, doorsNumber);
+		super(
+				steeringWheel, 
+				cargoCapacity, 
+				passengersNumber, 
+				wheelsNumber, 
+				forCargo, 
+				fuel, 
+				maximumSpeed, 
+				doorsNumber, 
+				maxPassengers);
+		
 		this.axlesNumber = axlesNumber;
-	}
+	}	
 
 	public int getAxlesNumber() {
 		return axlesNumber;
@@ -29,7 +40,27 @@ public class Truck extends Vehicle{
 
 	public void setAxlesNumber(int axlesNumber) {
 		this.axlesNumber = axlesNumber;
+	}	
+	
+	@Override 
+	public void openDoor(int doorsNumber) {
+		
 	}
 	
-	
+	@Override
+	public void closeDoor(int doorsNumber) {
+		
+	}
+
+	@Override
+	public void lockDoors() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void unlockDoors() {
+		// TODO Auto-generated method stub
+		
+	}
 }

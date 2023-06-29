@@ -1,12 +1,13 @@
 package entities;
 
-public class Car extends Vehicle {
+import interfaces.DoorControl;
+
+public class Car extends Vehicle implements DoorControl{
 	
 	private boolean hasAirConditioning;
 
 	public Car
 	(
-		boolean engine, 
 		boolean steeringWheel, 
 		double cargoCapacity, 
 		int passengersNumber, 
@@ -14,11 +15,23 @@ public class Car extends Vehicle {
 		boolean forCargo, 
 		Fuel fuel,
 		int maximumSpeed,
-		boolean hasAirConditioning,
-		int doorsNumber
+		int doorsNumber,
+		int maxPassengers,
+		boolean hasAirConditioning
 	) 
 	{
-		super(engine, steeringWheel, cargoCapacity, passengersNumber, wheelsNumber, forCargo, fuel, maximumSpeed, doorsNumber);
+		super(
+				steeringWheel, 
+				cargoCapacity, 
+				passengersNumber, 
+				wheelsNumber, 
+				forCargo, 
+				fuel, 
+				maximumSpeed,
+				doorsNumber,
+				maxPassengers
+			);
+		
 		this.hasAirConditioning = hasAirConditioning;
 	}
 
@@ -28,6 +41,30 @@ public class Car extends Vehicle {
 
 	public void setHasAirConditioning(boolean hasAirConditioning) {
 		this.hasAirConditioning = hasAirConditioning;
+	}
+
+	@Override
+	public void openDoor(int doorsNumber) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void closeDoor(int doorsNumber) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void lockDoors() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void unlockDoors() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 

@@ -11,10 +11,10 @@ public abstract class Vehicle {
 	private boolean forCargo;
 	private Fuel fuel;
 	private int maximumSpeed;
+	private int maxPassengers;
 	
 	public Vehicle
 	(
-		boolean engine, 
 		boolean steeringWheel, 
 		double cargoCapacity, 
 		int passengersNumber, 
@@ -22,18 +22,20 @@ public abstract class Vehicle {
 		boolean forCargo,
 		Fuel fuel,
 		int maximumSpeed,
-		int doorsNumber
+		int doorsNumber,
+		int maxPassengers
 	) 
 	{
-		this.engine = engine;
+		this.engine = false;
 		this.steeringWheel = steeringWheel;
 		this.cargoCapacity = cargoCapacity;
-		this.passengersNumber = passengersNumber;
+		this.passengersNumber = 0;
 		this.wheelsNumber = wheelsNumber;
 		this.forCargo = forCargo;
 		this.fuel = fuel;
 		this.maximumSpeed = maximumSpeed;
 		this.doorsNumber = doorsNumber;
+		this.maxPassengers = maxPassengers;
 	}
 	
 	public boolean isEngine() {
@@ -58,9 +60,7 @@ public abstract class Vehicle {
 	public int getWheelsNumber() {
 		return wheelsNumber;
 	}
-	public void setWheelsNumber(int wheelsNumber) {
-		this.wheelsNumber = wheelsNumber;
-	}
+
 	public boolean isForCargo() {
 		return forCargo;
 	}
@@ -70,8 +70,9 @@ public abstract class Vehicle {
 	public double getCargoCapacity() {
 		return cargoCapacity;
 	}
-	public void setCargoCapacity(double cargoCapacity) {
-		this.cargoCapacity = cargoCapacity;
+
+	public int getMaxPassengers() {
+		return maxPassengers;
 	}
 
 	public Fuel getFuel() {
@@ -94,23 +95,44 @@ public abstract class Vehicle {
 		return doorsNumber;
 	}
 
-	public void setDoorsNumber(int doorsNumber) {
-		this.doorsNumber = doorsNumber;
-	}
 	
 	@Override
 	public String toString() {
 		return "Vehicle: " + this.getClass().getSimpleName();
 	}
 	
-	//TODO: To implement
+	//TODO: speedUp
 	public void speedUp(int speed) { }
 	
-	//TODO: To implement
+	//TODO: speedDown
 	public void speedDown(int speed) { } 
 	
-	//TODO; To implement
-	public void getPassenger() { }
+	//TODO: getPassengersCount
+	public void getPassengersCount() { }
+	
+	//TODO: addPassenger
+	public void addPassenger() { }
+	
+	//TODO: removePassenger
+	public void removePassenger() { }
+	
+	//TODO: isMaxPassengerReached
+	public boolean isMaxPassengerReached() { return false; }
+	
+	//TODO: startEngine
+	public void startEngine() {
+		this.engine = true;
+	} 
+	
+	//TODO: stopEngine
+	public void stopEngine() {
+		this.engine = false;
+	}
+	
+	
+	
+	
+	
 	
 	
 	
