@@ -5,7 +5,6 @@ public class Carriage extends VehicleWithDoor {
 
 	public Carriage
 	(
-		boolean steeringWheel, 
 		double cargoCapacity, 
 		int passengersNumber, 
 		int wheelsNumber, 
@@ -17,7 +16,6 @@ public class Carriage extends VehicleWithDoor {
 	) 
 	{
 		super(
-				steeringWheel, 
 				cargoCapacity, 
 				passengersNumber, 
 				wheelsNumber, 

@@ -7,7 +7,6 @@ public class Biclycle extends Vehicle {
 	
 	public Biclycle
 	(
-			boolean steeringWheel, 
 			double cargoCapacity, 
 			int passengersNumber, 
 			int wheelsNumber, 
@@ -20,7 +19,7 @@ public class Biclycle extends Vehicle {
 	) 
 	{
 		super(
-				steeringWheel, 
+				false, 
 				cargoCapacity, 
 				passengersNumber, 
 				wheelsNumber, 

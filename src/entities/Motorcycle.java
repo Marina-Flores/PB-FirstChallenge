@@ -6,7 +6,6 @@ public class Motorcycle extends Vehicle {
 
 	public Motorcycle
 	(
-		boolean steeringWheel,
 		double cargoCapacity, 
 		int passengersNumber,
 		int wheelsNumber, 
@@ -18,7 +17,7 @@ public class Motorcycle extends Vehicle {
 	) 
 	{
 		super(
-				steeringWheel, 
+				false, 
 				cargoCapacity, 
 				passengersNumber, 
 				wheelsNumber, 

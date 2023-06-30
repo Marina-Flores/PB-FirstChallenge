@@ -6,7 +6,6 @@ public class Car extends VehicleWithDoor{
 	
 	public Car
 	(
-		boolean steeringWheel, 
 		double cargoCapacity, 
 		int passengersNumber, 
 		int wheelsNumber, 
@@ -19,7 +18,6 @@ public class Car extends VehicleWithDoor{
 	) 
 	{
 		super(
-				steeringWheel, 
 				cargoCapacity, 
 				passengersNumber, 
 				wheelsNumber, 
@@ -39,15 +37,6 @@ public class Car extends VehicleWithDoor{
 
 	public void setHasAirConditioning(boolean hasAirConditioning) {
 		this.hasAirConditioning = hasAirConditioning;
-	}	
-	
-	@Override 
-	public void addPassenger() {
-		
 	}
 	
-	@Override
-	public void removePassenger() {
-		
-	}
 }

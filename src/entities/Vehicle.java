@@ -2,21 +2,21 @@ package entities;
 
 public abstract class Vehicle {		
 	
-	private boolean engine;
-	private boolean steeringWheel;	
+	protected boolean engine;
+	private boolean hasSteeringWheel;	
 	private double cargoCapacity;
 	private int passengersNumber; 
 	private int wheelsNumber; 
 	private int doorsNumber;
 	private boolean forCargo;
 	private Fuel fuel;
-	private int maximumSpeed;
+	protected int maximumSpeed;
 	private int maxPassengers;
-	private int currentSpeed = 0; 
+	protected int currentSpeed = 0; 
 	
 	public Vehicle
 	(
-		boolean steeringWheel, 
+		boolean hasSteeringWheel, 
 		double cargoCapacity, 
 		int passengersNumber, 
 		int wheelsNumber, 
@@ -28,7 +28,7 @@ public abstract class Vehicle {
 	) 
 	{
 		this.engine = false;
-		this.steeringWheel = steeringWheel;
+		this.hasSteeringWheel = hasSteeringWheel;
 		this.cargoCapacity = cargoCapacity;
 		this.passengersNumber = 0;
 		this.wheelsNumber = wheelsNumber;
@@ -46,10 +46,10 @@ public abstract class Vehicle {
 		this.engine = engine;
 	}
 	public boolean isSteeringWheel() {
-		return steeringWheel;
+		return hasSteeringWheel;
 	}
 	public void setSteeringWheel(boolean steeringWheel) {
-		this.steeringWheel = steeringWheel;
+		this.hasSteeringWheel = steeringWheel;
 	}
 	
 	public int getPassengersNumber() {
@@ -98,20 +98,24 @@ public abstract class Vehicle {
 		return currentSpeed;
 	}
 
-	private void setCurrentSpeed(int currentSpeed) {
+	protected void setCurrentSpeed(int currentSpeed) {
 		this.currentSpeed = currentSpeed;
 	}
 	
 	public void speedUp(int speed) {
-		if(this.currentSpeed == this.maximumSpeed)
+		if(!engine)
+			System.out.println("Please, start the car before accelerating!");
+		else if(this.currentSpeed == this.maximumSpeed)
 			System.out.println("It wasn't possible to accelerate because the vehicle is already at maximum speed!");
 		else if((this.currentSpeed + speed) > this.maximumSpeed) {
 			int speedIncreased = (this.currentSpeed + speed) - this.maximumSpeed;
 			this.setCurrentSpeed(this.currentSpeed + speedIncreased);
 			System.out.println("It only possible to increase the speed by " + speedIncreased + " in order to avoid exceeding the maximum speed!");
 		}
-		else
+		else {
+			System.out.println("Speeding up...");
 			this.setCurrentSpeed(this.currentSpeed + speed); 
+		}
 	}
 	
 	public void speedDown(int speed) { 
@@ -121,13 +125,16 @@ public abstract class Vehicle {
 			System.out.println("Stopping the vehicle...");
 			this.setCurrentSpeed(0);
 		}
-		else
+		else {
+			System.out.println("Slowing down...");
 			this.setCurrentSpeed(this.currentSpeed - speed);
+		}
 	}	
 		
 	public void addPassenger() {
+		System.out.println("Caiu no addPassenger");
 		if(!this.isMaxPassengerReached()) {
-			this.passengersNumber ++; 
+			this.setPassengersNumber(passengersNumber += 1); 
 		}
 		else {
 			System.out.println("Vehicle has already reached maximum passenger capacity!");
@@ -137,8 +144,10 @@ public abstract class Vehicle {
 	public void removePassenger() {
 		if(passengersNumber == 0)
 			System.out.println("The vehicle has no passengers!");
-		else
-			this.passengersNumber --;
+		else {
+			System.out.println("Leaving the passenger...");
+			this.setPassengersNumber(passengersNumber -= 1);
+		}
 	}
 	
 	public boolean isMaxPassengerReached() { 
@@ -149,11 +158,21 @@ public abstract class Vehicle {
 	}
 	
 	public void startEngine() {
-		this.engine = true;
+		if(engine)
+			System.out.println("The engine is already running!");
+		else {
+			System.out.println("Starting the engine...");
+			this.engine = true;
+		}
 	} 
 	
 	public void stopEngine() {
-		this.engine = false;
+		if(!engine)
+			System.out.println("The engine is already running!");
+		else {
+			System.out.println("Starting the engine...");
+			this.engine = true;
+		}
 	}
 	
 	public void upgradeSpeed(int additionalSpeed) {

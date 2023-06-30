@@ -6,7 +6,7 @@ public class Truck extends VehicleWithDoor{
 	
 	public Truck
 	(
-		boolean steeringWheel, 
+		boolean hasSteeringWheel, 
 		double cargoCapacity, 
 		int passengersNumber, 
 		int wheelsNumber, 
@@ -19,7 +19,6 @@ public class Truck extends VehicleWithDoor{
 	) 
 	{
 		super(
-				steeringWheel, 
 				cargoCapacity, 
 				passengersNumber, 
 				wheelsNumber, 
