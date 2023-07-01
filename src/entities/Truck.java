@@ -18,7 +18,6 @@ public class Truck extends VehicleWithDoor{
 	{
 		super(
 				cargoCapacity, 
-				0, 
 				wheelsNumber, 
 				forCargo, 
 				fuel, 
@@ -37,5 +36,10 @@ public class Truck extends VehicleWithDoor{
 		this.axlesNumber = axlesNumber;
 	}	
 	
+	@Override
+	public String toString() {
+	    return super.toString() +
+	            "\nAxles Number: " + axlesNumber; 
 	
+	}
 }

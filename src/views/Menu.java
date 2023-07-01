@@ -30,7 +30,7 @@ public class Menu {
 					break;
 				case 2:
 					System.out.println("\n List vehicle option chosen!");			
-					System.out.println(VehiclesControl.vehicles.size());
+					VehiclesControl.ListAllVehicles();
 					break;	
 				case 3:
 					System.out.println("\n Control vehicle option chosen!");		

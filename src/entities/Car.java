@@ -18,7 +18,6 @@ public class Car extends VehicleWithDoor{
 	{
 		super(
 				cargoCapacity, 
-				0, 
 				wheelsNumber, 
 				forCargo, 
 				fuel, 
@@ -38,4 +37,9 @@ public class Car extends VehicleWithDoor{
 		this.hasAirConditioning = hasAirConditioning;
 	}
 	
+	@Override
+	public String toString() {
+	    return super.toString() +
+	            "\nHas Air Conditioning: " + hasAirConditioning;
+	}	
 }

@@ -18,7 +18,6 @@ public class Motorcycle extends Vehicle {
 		super(
 				false, 
 				cargoCapacity, 
-				0, 
 				wheelsNumber, 
 				forCargo, 
 				fuel, 
@@ -37,5 +36,11 @@ public class Motorcycle extends Vehicle {
 
 	public void setEletricStart(boolean eletricStart) {
 		this.eletricStart = eletricStart;
+	}
+	
+	@Override
+	public String toString() {
+	    return super.toString() +
+	            ", Has Electric Start: " + eletricStart;
 	}
 }

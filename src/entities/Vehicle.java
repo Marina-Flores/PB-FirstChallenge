@@ -18,7 +18,6 @@ public abstract class Vehicle {
 	(
 		boolean hasSteeringWheel, 
 		double cargoCapacity, 
-		int passengersNumber, 
 		int wheelsNumber, 
 		boolean forCargo,
 		Fuel fuel,
@@ -181,6 +180,16 @@ public abstract class Vehicle {
 	
 	@Override
 	public String toString() {
-		return "Vehicle: " + this.getClass().getSimpleName();
-	}	
+	    return "Engine: " + engine + "\n" +
+	            "Has Steering Wheel: " + hasSteeringWheel + "\n" +
+	            "Cargo Capacity: " + cargoCapacity + "\n" +
+	            "Passengers Number: " + passengersNumber + "\n" +
+	            "Wheels Number: " + wheelsNumber + "\n" +
+	            "Doors Number: " + doorsNumber + "\n" +
+	            "For Cargo: " + forCargo + "\n" +
+	            "Fuel: " + fuel + "\n" +
+	            "Maximum Speed: " + maximumSpeed + "\n" +
+	            "Max Passengers: " + maxPassengers + "\n" +
+	            "Current Speed: " + currentSpeed;
+	}
 }

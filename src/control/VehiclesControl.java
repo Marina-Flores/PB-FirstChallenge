@@ -9,6 +9,20 @@ import views.Menu;
 public class VehiclesControl {
 
 	public static LinkedList<Vehicle> vehicles = new LinkedList<>();
+	
+	public static void ListAllVehicles() {
+		int index = 0;
+		if(vehicles.size() > 0) {
+			for(Vehicle v : vehicles){
+				System.out.println("------------------------------");
+				System.out.println("{" + index + "} \n" + v);
+				System.out.println("------------------------------");			
+			}
+		}
+		else {
+			System.out.println("There are no registered vehicles.");
+		}		
+	}
 
 	public static void ShowAvailableVehicles() {
 		System.out.println("Choose one of the available vahicles: ");

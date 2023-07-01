@@ -18,7 +18,6 @@ public class Biclycle extends Vehicle {
 		super(
 				false, 
 				cargoCapacity, 
-				0, 
 				2, 
 				forCargo, 
 				new Fuel("pessoa"), 
@@ -44,6 +43,10 @@ public class Biclycle extends Vehicle {
 		this.hasLuggage = hasLuggage;
 	} 
 	
-	
-
+	@Override
+	public String toString() {
+	    return super.toString() +
+	            "\nIs Electric: " + isEletric +
+	            "\nHas Luggage: " + hasLuggage;
+	}
 }

@@ -111,4 +111,29 @@ public class Fuel {
 	public void setAnimal() {
 		setFuel("animal");
 	}
+	
+	@Override
+	public String toString() {
+	    
+	    if (gasoline) {
+	        return "Gasoline";
+	    }
+	    if (ethanol) {
+	        return "Ethanol";
+	    }
+	    if (diesel) {
+	        return "Diesel";
+	    }
+	    if (electricity) {
+	        return "Electricity";
+	    }
+	    if (human) {
+	        return "Human";
+	    }
+	    if (animal) {
+	        return "Animal";
+	    }
+	    return "";
+	}
+
 }

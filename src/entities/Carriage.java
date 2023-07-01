@@ -15,14 +15,11 @@ public class Carriage extends Vehicle {
 		super(
 				false, 
 				cargoCapacity, 
-				0, 
 				wheelsNumber,
 				forCargo, 
 				new Fuel("animal"), 
 				maximumSpeed, 
 				doorsNumber,
 				maxPassengers);
-	}
-
-	
+	}	
 }

@@ -7,9 +7,9 @@ public abstract class VehicleWithDoor extends Vehicle implements DoorControl {
 	private boolean lockedDoors = false;
 	private int openedDoors = 0;
 
-	public VehicleWithDoor(double cargoCapacity, int passengersNumber, int wheelsNumber, boolean forCargo, Fuel fuel,
+	public VehicleWithDoor(double cargoCapacity, int wheelsNumber, boolean forCargo, Fuel fuel,
 			int maximumSpeed, int doorsNumber, int maxPassengers) {
-		super(true, cargoCapacity, passengersNumber, wheelsNumber, forCargo, fuel, maximumSpeed, doorsNumber,
+		super(true, cargoCapacity, wheelsNumber, forCargo, fuel, maximumSpeed, doorsNumber,
 				maxPassengers);
 	}
 
@@ -84,5 +84,12 @@ public abstract class VehicleWithDoor extends Vehicle implements DoorControl {
 			System.out.println("Speeding up...");
 			this.setCurrentSpeed(this.currentSpeed + speed); 
 		}
+	}
+	
+	@Override
+	public String toString() {
+	    return super.toString() +
+	            "\nLocked Doors: " + lockedDoors +
+	            "\nOpened Doors: " + openedDoors;
 	}
 }
