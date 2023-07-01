@@ -33,7 +33,8 @@ public class Menu {
 					VehiclesControl.ListAllVehicles();
 					break;	
 				case 3:
-					System.out.println("\n Control vehicle option chosen!");		
+					System.out.println("\n Control vehicle option chosen!");
+					VehiclesControl.ControlVehicle(sc);
 					break;				
 				case 50:
 					System.out.println(opcoes.toString());		

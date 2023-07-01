@@ -149,7 +149,7 @@ public abstract class Vehicle {
 		}
 	}
 	
-	public boolean isMaxPassengerReached() { 
+	protected boolean isMaxPassengerReached() { 
 		if(this.passengersNumber == this.maxPassengers)
 			return true;
 		
