@@ -6,12 +6,11 @@ public class Car extends VehicleWithDoor{
 	
 	public Car
 	(
-		double cargoCapacity, 
-		int passengersNumber, 
-		int wheelsNumber, 
+		double cargoCapacity,
+		int wheelsNumber,
 		boolean forCargo, 
-		Fuel fuel,
-		int maximumSpeed,
+		Fuel fuel, 
+		int maximumSpeed, 
 		int doorsNumber,
 		int maxPassengers,
 		boolean hasAirConditioning
@@ -19,7 +18,7 @@ public class Car extends VehicleWithDoor{
 	{
 		super(
 				cargoCapacity, 
-				passengersNumber, 
+				0, 
 				wheelsNumber, 
 				forCargo, 
 				fuel, 

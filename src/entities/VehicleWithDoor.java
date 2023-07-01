@@ -4,8 +4,8 @@ import interfaces.DoorControl;
 
 public abstract class VehicleWithDoor extends Vehicle implements DoorControl {
 
-	private boolean lockedDoors;
-	private int openedDoors;
+	private boolean lockedDoors = false;
+	private int openedDoors = 0;
 
 	public VehicleWithDoor(double cargoCapacity, int passengersNumber, int wheelsNumber, boolean forCargo, Fuel fuel,
 			int maximumSpeed, int doorsNumber, int maxPassengers) {

@@ -6,20 +6,19 @@ public class Motorcycle extends Vehicle {
 
 	public Motorcycle
 	(
-		double cargoCapacity, 
-		int passengersNumber,
-		int wheelsNumber, 
-		boolean forCargo,
+		double cargoCapacity,
+		int wheelsNumber,
+		boolean forCargo, 
 		Fuel fuel,
-		int maximumSpeed,
-		int maxPassengers,
-		boolean eletricStart
+		int maximumSpeed, 
+		int maxPassengers, 
+		boolean eletricStart 
 	) 
 	{
 		super(
 				false, 
 				cargoCapacity, 
-				passengersNumber, 
+				0, 
 				wheelsNumber, 
 				forCargo, 
 				fuel, 

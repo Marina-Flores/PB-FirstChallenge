@@ -5,10 +5,8 @@ public class Truck extends VehicleWithDoor{
 	private int axlesNumber;
 	
 	public Truck
-	(
-		boolean hasSteeringWheel, 
+	(		
 		double cargoCapacity, 
-		int passengersNumber, 
 		int wheelsNumber, 
 		boolean forCargo, 
 		Fuel fuel, 
@@ -20,7 +18,7 @@ public class Truck extends VehicleWithDoor{
 	{
 		super(
 				cargoCapacity, 
-				passengersNumber, 
+				0, 
 				wheelsNumber, 
 				forCargo, 
 				fuel, 

@@ -2,6 +2,8 @@ package views;
 
 import java.util.Scanner;
 
+import control.VehiclesControl;
+
 public class Menu {
 	public static void Principal() {
     	Scanner sc = new Scanner(System.in);
@@ -13,7 +15,6 @@ public class Menu {
 		opcoes.append("|1 - Add a Vehicle            |").append('\n');
 		opcoes.append("|2 - List Vehicles            |").append('\n');
 		opcoes.append("|3 - Control Vehicle 	      |").append('\n');
-		opcoes.append("|0 - Exit             	      |").append('\n');
 		opcoes.append("-------------------------------").append('\n');
 	
 		short opcao = 50;		
@@ -25,9 +26,11 @@ public class Menu {
 			switch(opcao){
 				case 1:
 					System.out.println("\n Add vehicle option chosen!");	
+					VehiclesControl.AddVehicle(sc);
 					break;
 				case 2:
-					System.out.println("\n Update vehicle option chosen!");			
+					System.out.println("\n List vehicle option chosen!");			
+					System.out.println(VehiclesControl.vehicles.size());
 					break;	
 				case 3:
 					System.out.println("\n Control vehicle option chosen!");		
@@ -46,4 +49,6 @@ public class Menu {
 		
 		sc.close();
 	}	
+	
+	
 }

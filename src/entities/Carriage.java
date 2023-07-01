@@ -1,29 +1,28 @@
 package entities;
 
 
-public class Carriage extends VehicleWithDoor {
+public class Carriage extends Vehicle {
 
-	public Carriage
-	(
-		double cargoCapacity, 
-		int passengersNumber, 
-		int wheelsNumber, 
-		boolean forCargo, 
-		Fuel fuel,
-		int maximumSpeed,
-		int doorsNumber,
-		int maxPassengers
+	public Carriage(
+			double cargoCapacity, 
+			int wheelsNumber, 
+			boolean forCargo,   
+			int maximumSpeed,   
+			int doorsNumber,  
+			int maxPassengers 
 	) 
 	{
 		super(
+				false, 
 				cargoCapacity, 
-				passengersNumber, 
-				wheelsNumber, 
+				0, 
+				wheelsNumber,
 				forCargo, 
-				fuel, 
+				new Fuel("animal"), 
 				maximumSpeed, 
 				doorsNumber,
-				maxPassengers				
-			);
-	}	
+				maxPassengers);
+	}
+
+	
 }

@@ -8,12 +8,9 @@ public class Biclycle extends Vehicle {
 	public Biclycle
 	(
 			double cargoCapacity, 
-			int passengersNumber, 
-			int wheelsNumber, 
 			boolean forCargo, 
-			Fuel fuel,
 			int maximumSpeed,
-			boolean isEletric,
+			boolean isEletric, 
 			int maxPassengers,
 			boolean hasLuggage			
 	) 
@@ -21,10 +18,10 @@ public class Biclycle extends Vehicle {
 		super(
 				false, 
 				cargoCapacity, 
-				passengersNumber, 
-				wheelsNumber, 
+				0, 
+				2, 
 				forCargo, 
-				fuel, 
+				new Fuel("pessoa"), 
 				maximumSpeed, 
 				0,
 				maxPassengers
