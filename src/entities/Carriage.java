@@ -22,4 +22,14 @@ public class Carriage extends Vehicle {
 				doorsNumber,
 				maxPassengers);
 	}	
+	
+	@Override
+	public void startEngine() {			
+			System.out.println("Sorry, this is not possible!");	
+	} 
+
+	@Override
+	public void stopEngine() {	
+		System.out.println("Sorry, this is not possible!");	
+	}
 }

@@ -38,6 +38,8 @@ public abstract class Vehicle {
 		this.maxPassengers = maxPassengers;
 	}
 	
+	public Vehicle() {}
+	
 	public boolean isEngine() {
 		return engine;
 	}	
@@ -112,7 +114,7 @@ public abstract class Vehicle {
 			System.out.println("It only possible to increase the speed by " + speedIncreased + " in order to avoid exceeding the maximum speed!");
 		}
 		else {
-			System.out.println("Speeding up...");
+			System.out.println("Speeding up... Current Speed: " + currentSpeed);
 			this.setCurrentSpeed(this.currentSpeed + speed); 
 		}
 	}
@@ -125,14 +127,14 @@ public abstract class Vehicle {
 			this.setCurrentSpeed(0);
 		}
 		else {
-			System.out.println("Slowing down...");
+			System.out.println("Slowing down... Current Speed: " + currentSpeed);
 			this.setCurrentSpeed(this.currentSpeed - speed);
 		}
 	}	
 		
 	public void addPassenger() {
-		System.out.println("Caiu no addPassenger");
 		if(!this.isMaxPassengerReached()) {
+			System.out.println("Adding the passenger... Total: " + passengersNumber);
 			this.setPassengersNumber(passengersNumber += 1); 
 		}
 		else {
@@ -169,7 +171,7 @@ public abstract class Vehicle {
 		if(!engine)
 			System.out.println("The engine is already running!");
 		else {
-			System.out.println("Starting the engine...");
+			System.out.println("Stoping the engine...");
 			this.engine = true;
 		}
 	}
@@ -180,7 +182,8 @@ public abstract class Vehicle {
 	
 	@Override
 	public String toString() {
-	    return "Engine: " + engine + "\n" +
+	    return  "Vehicle: " + this.getClass().getSimpleName() + "\n" + 
+	    		"Engine started: " + engine + "\n" +
 	            "Has Steering Wheel: " + hasSteeringWheel + "\n" +
 	            "Cargo Capacity: " + cargoCapacity + "\n" +
 	            "Passengers Number: " + passengersNumber + "\n" +

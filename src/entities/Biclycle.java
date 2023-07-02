@@ -20,7 +20,7 @@ public class Biclycle extends Vehicle {
 				cargoCapacity, 
 				2, 
 				forCargo, 
-				new Fuel("pessoa"), 
+				new Fuel("human"), 
 				maximumSpeed, 
 				0,
 				maxPassengers
@@ -42,6 +42,34 @@ public class Biclycle extends Vehicle {
 	public void setHasLuggage(boolean hasLuggage) {
 		this.hasLuggage = hasLuggage;
 	} 
+	
+	@Override
+	public void startEngine() {
+		if(isEletric) {
+			if(engine)
+				System.out.println("The engine is already running!");
+			else {
+				System.out.println("Starting the engine...");
+				this.engine = true;
+			}
+		}
+		else 		
+			System.out.println("Sorry, this bicycle does not have an engine!");	
+	} 
+
+	@Override
+	public void stopEngine() {
+		if(isEletric) {
+			if(!engine)
+				System.out.println("The engine is already running!");
+			else {
+				System.out.println("Starting the engine...");
+				this.engine = true;
+			}
+		}
+		else 
+			System.out.println("Sorry, this bicycle does not have an engine!");			
+	}
 	
 	@Override
 	public String toString() {

@@ -41,6 +41,6 @@ public class Motorcycle extends Vehicle {
 	@Override
 	public String toString() {
 	    return super.toString() +
-	            ", Has Electric Start: " + eletricStart;
+	            "\nHas Electric Start: " + eletricStart;
 	}
 }

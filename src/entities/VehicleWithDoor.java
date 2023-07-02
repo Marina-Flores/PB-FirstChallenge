@@ -12,6 +12,8 @@ public abstract class VehicleWithDoor extends Vehicle implements DoorControl {
 		super(true, cargoCapacity, wheelsNumber, forCargo, fuel, maximumSpeed, doorsNumber,
 				maxPassengers);
 	}
+	
+	public VehicleWithDoor() { }
 
 	@Override
 	public void openDoor(int doorsNumber) {
@@ -28,6 +30,7 @@ public abstract class VehicleWithDoor extends Vehicle implements DoorControl {
 						"The vehicle has " + closedDoors + " closed doors. Opening the " + closedDoors + " doors...");
 				this.openedDoors = this.getDoorsNumber();
 			} else {
+				System.out.println("Opening " + doorsNumber + " doors...");
 				this.openedDoors += doorsNumber;
 			}
 		}
@@ -41,8 +44,10 @@ public abstract class VehicleWithDoor extends Vehicle implements DoorControl {
 			System.out.println(
 					"The vehicle has " + openedDoors + " opened doors. Closing the " + openedDoors + " doors...");
 			openedDoors = 0;
-		} else
+		} else {
+			System.out.println("Closing " + doorsNumber + " doors...");
 			openedDoors -= doorsNumber;
+		}
 	}
 
 	@Override
@@ -81,7 +86,7 @@ public abstract class VehicleWithDoor extends Vehicle implements DoorControl {
 			System.out.println("It only possible to increase the speed by " + speedIncreased + " in order to avoid exceeding the maximum speed!");
 		}
 		else {
-			System.out.println("Speeding up...");
+			System.out.println("Speeding up... Current speed: " + currentSpeed);
 			this.setCurrentSpeed(this.currentSpeed + speed); 
 		}
 	}

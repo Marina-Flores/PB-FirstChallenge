@@ -17,6 +17,8 @@ public class VehiclesControl {
 				System.out.println("------------------------------");
 				System.out.println("		{" + index + "} \n" + v);
 				System.out.println("------------------------------");			
+				
+				index++;
 			}
 		}
 		else {
@@ -25,7 +27,7 @@ public class VehiclesControl {
 	}
 
 	public static void ShowAvailableVehicles() {
-		System.out.println("Choose one of the available vahicles: ");
+		System.out.println("Choose one of the available vehicles: ");
 
 		System.out.println("1 - Bicycle");
 		System.out.println("2 - Motorcycle");
@@ -38,7 +40,7 @@ public class VehiclesControl {
 	}
 
 	public static void ShowAvailableFuels() {
-		System.out.println("Choose one of the available fuel: ");
+		System.out.println("Type one of the available fuel: ");
 
 		System.out.println("Gasoline");
 		System.out.println("Ethanol");

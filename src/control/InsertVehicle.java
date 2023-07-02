@@ -17,35 +17,37 @@ public class InsertVehicle {
 
 			System.out.print("Is the bicycle for cargo (y/n)? ");
 			String replyforCargo = sc.next();
-			boolean forCargo = (replyforCargo == "y") ? true : false;
+			boolean forCargo = replyforCargo.equalsIgnoreCase("y");
 
 			double cargoCapacity;
 			if (forCargo) {
-				System.out.print("Qual a capacidade de carga? ");
+				System.out.print("What is the load capacity? ");
 				cargoCapacity = sc.nextDouble();
 			} else
 				cargoCapacity = 0;
 
 			System.out.print("What is the bicycle maximum speed? ");
 			int maximumSpeed = sc.nextInt();
-
+			
+			sc.nextLine();
 			System.out.print("Is the bicycle eletric (y/n)? ");
 			String replyIsElectric = sc.nextLine();
-			boolean isEletric = (replyIsElectric == "y") ? true : false;
+			boolean isEletric = replyIsElectric.equalsIgnoreCase("y");
 
 			System.out.print("What is the bicycle maximum passengers? ");
 			int maxPassenger = sc.nextInt();
 
+			sc.nextLine();
 			System.out.print("Has the bicycle luggage (y/n)? ");
 			String replyHasLuggage = sc.nextLine();
-			boolean hasLuggage = (replyHasLuggage == "y") ? true : false;
+			boolean hasLuggage = replyHasLuggage.equalsIgnoreCase("y");
 
 			Biclycle bicycle = new Biclycle(cargoCapacity, forCargo, maximumSpeed, isEletric, maxPassenger, hasLuggage);
 
 			VehiclesControl.vehicles.add(bicycle);
 
 		} catch (Exception e) {
-			System.out.println("Something went wrong! Restarting...");
+			System.out.println("Something went wrong! Please, check the values before press enter. Restarting...");
 			AddBicycle(sc);
 		}
 	}
@@ -55,7 +57,7 @@ public class InsertVehicle {
 		try {
 			System.out.print("Is the motocycle for cargo (y/n)? ");
 			String replyforCargo = sc.next();
-			boolean forCargo = (replyforCargo == "y") ? true : false;
+			boolean forCargo = replyforCargo.equalsIgnoreCase("y");;
 
 			double cargoCapacity;
 			if (forCargo) {
@@ -72,10 +74,12 @@ public class InsertVehicle {
 
 			System.out.print("What is the motocycle wheels number? ");
 			int wheelsNumber = sc.nextInt();
+			
+			sc.nextLine();
 
 			System.out.print("Has the motocycle an eletric start (y/n)? ");
 			String replyHasEletricStart = sc.nextLine();
-			boolean hasEletricStart = (replyHasEletricStart == "y") ? true : false;
+			boolean hasEletricStart = replyHasEletricStart.equalsIgnoreCase("y");;
 
 			System.out.print("What is the motocycle fuel? ");
 			VehiclesControl.ShowAvailableFuels();
@@ -86,7 +90,7 @@ public class InsertVehicle {
 
 			VehiclesControl.vehicles.add(motorcycle);
 		} catch (Exception e) {
-			System.out.println("Something went wrong! Restarting...");
+			System.out.println("Something went wrong! Please, check the values before press enter. Restarting...");
 			AddMotorcycle(sc);
 		}
 
@@ -97,7 +101,7 @@ public class InsertVehicle {
 		try {
 			System.out.print("Is the carriage for cargo (y/n)? ");
 			String replyforCargo = sc.next();
-			boolean forCargo = (replyforCargo == "y") ? true : false;
+			boolean forCargo = replyforCargo.equalsIgnoreCase("y");
 
 			double cargoCapacity;
 			if (forCargo) {
@@ -109,7 +113,7 @@ public class InsertVehicle {
 			System.out.print("What is the carriage maximum speed? ");
 			int maximumSpeed = sc.nextInt();
 
-			System.out.println("What is the carriage doors number");
+			System.out.print("What is the carriage doors number? ");
 			int doorsNumber = sc.nextInt();
 
 			System.out.print("What is the carriage maximum passengers? ");
@@ -124,7 +128,7 @@ public class InsertVehicle {
 			VehiclesControl.vehicles.add(carriage);
 
 		} catch (Exception e) {
-			System.out.println("Something went wrong! Restarting...");
+			System.out.println("Something went wrong! Please, check the values before press enter. Restarting...");
 			AddCarriage(sc);
 		}
 	}
@@ -134,7 +138,7 @@ public class InsertVehicle {
 		try {
 			System.out.print("Is the car for cargo (y/n)? ");
 			String replyforCargo = sc.next();
-			boolean forCargo = (replyforCargo == "y") ? true : false;
+			boolean forCargo = replyforCargo.equalsIgnoreCase("y");
 
 			double cargoCapacity;
 			if (forCargo) {
@@ -162,7 +166,7 @@ public class InsertVehicle {
 
 			System.out.print("Has the car air conditioning (y/n)? ");
 			String replyHasAirConditioning = sc.nextLine();
-			boolean hasAirConditioning = (replyHasAirConditioning == "y") ? true : false;
+			boolean hasAirConditioning = replyHasAirConditioning.equalsIgnoreCase("y");
 
 			Vehicle car = new Car(cargoCapacity, wheelsNumber, forCargo, new Fuel(fuel.toLowerCase()), maximumSpeed,
 					doorsNumber, maxPassenger, hasAirConditioning);
@@ -170,7 +174,7 @@ public class InsertVehicle {
 			VehiclesControl.vehicles.add(car);
 
 		} catch (Exception e) {
-			System.out.println("Something went wrong! Restarting...");
+			System.out.println("Something went wrong! Please, check the values before press enter. Restarting...");
 			AddCar(sc);
 		}
 
@@ -181,7 +185,7 @@ public class InsertVehicle {
 		try {
 			System.out.print("Is the truck for cargo (y/n)? ");
 			String replyforCargo = sc.next(); 
-			boolean forCargo = (replyforCargo == "y") ? true : false;
+			boolean forCargo = replyforCargo.equalsIgnoreCase("y");
 
 			double cargoCapacity;
 			if (forCargo) {
@@ -207,7 +211,7 @@ public class InsertVehicle {
 			VehiclesControl.ShowAvailableFuels();
 			String fuel = sc.nextLine();
 
-			System.out.print("How many axles does the truck have? (y/n)");
+			System.out.print("How many axles does the truck have? ");
 			int axlesNumber = sc.nextInt();
 
 			Vehicle truck = new Truck(cargoCapacity, wheelsNumber, forCargo, new Fuel(fuel.toLowerCase()), maximumSpeed,
@@ -215,7 +219,7 @@ public class InsertVehicle {
 
 			VehiclesControl.vehicles.add(truck);
 		} catch (Exception e) {
-			System.out.println("Something went wrong! Restarting...");
+			System.out.println("Something went wrong! Please, check the values before press enter. Restarting...");
 			AddTruck(sc);
 		}
 	}

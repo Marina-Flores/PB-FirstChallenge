@@ -1,12 +1,8 @@
-import entities.*;
 import views.Menu;
 
 public class main {
 
-	public static void main(String[] args) {
-		
-		Menu.Principal();
-		
+	public static void main(String[] args) {		
+		Menu.Principal();		
 	}
-
 }
